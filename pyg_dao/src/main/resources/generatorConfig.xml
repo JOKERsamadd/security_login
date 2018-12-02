@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<classPathEntry location="D:\develop\.m2\repository\mysql\mysql-connector-java\8.0.12\mysql-connector-java-8.0.12.jar" />-->
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin" />
+        <!--<plugin type="cn.net.zhipeng.SerializablePlugin" />-->
+        <!--<plugin type="cn.net.zhipeng.CaseInsensitiveLikePlugin"/>-->
+        <commentGenerator>
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://39.105.78.121/pinyougoudb?characterEncoding=utf-8"
+                        userId="root"
+                        password="123456">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cn.net.zhipeng.pojo"
+                            targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"  targetProject=".\src\main\resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="cn.net.zhipeng.mapper"
+                             targetProject=".\src\main\java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+<!--        &lt;!&ndash; 指定数据库表 &ndash;&gt;
+        <table tableName="tb_address" domainObjectName="Address"/>
+        <table tableName="tb_areas" domainObjectName="Areas"/>
+        <table tableName="tb_brand" domainObjectName="Brand"/>
+        <table tableName="tb_cities" domainObjectName="Cities"/>-->
+        <table tableName="tb_content" domainObjectName="Content"/>
+<!--        <table tableName="tb_content_category" domainObjectName="ContentCategory"/>
+        <table tableName="tb_freight_template" domainObjectName="FreightTemplate"/>
+        <table tableName="tb_goods" domainObjectName="Goods"/>
+        <table tableName="tb_goods_desc" domainObjectName="GoodsDesc"/>
+        <table tableName="tb_item" domainObjectName="Item"/>
+        <table tableName="tb_item_cat" domainObjectName="ItemCat"/>
+        <table tableName="tb_item_spec_option" domainObjectName="ItemSpecOption"/>
+        <table tableName="tb_order" domainObjectName="Order"/>
+        <table tableName="tb_order_item" domainObjectName="OrderItem"/>
+        <table tableName="tb_pay_log" domainObjectName="PayLog"/>
+        <table tableName="tb_provinces" domainObjectName="Provinces"/>
+        <table tableName="tb_seller" domainObjectName="Seller"/>
+        <table tableName="tb_specification" domainObjectName="Specification"/>
+        <table tableName="tb_specification_option" domainObjectName="SpecificationOption"/>
+        <table tableName="tb_type_template" domainObjectName="TypeTemplate"/>
+        <table tableName="tb_user" domainObjectName="User"/>-->
+    </context>
+</generatorConfiguration>
